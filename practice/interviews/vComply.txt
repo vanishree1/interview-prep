@@ -1,0 +1,31 @@
+Book reading app
+------------
+	- Design a book reading application that allows users to access a variety of book types, segregated by categories.
+	- Clicking on a book should open the book and store the user's last read position to resume progress when the user returns to the book. 
+	- Design system architecture that outlines the key components and how they interact with each other
+	- Design the individual components in detail, specifying their responsibilities and how it manages the state.
+
+
+Api 1
+activeBooks:  []
+
+Api 2
+activeBooks:  [{
+    bookId: 1, 
+    progress:
+}, {
+    bookId: 2,
+    progress: 30%
+}]
+
+
+[{
+    title: 'Recommended to you';
+    categoryId: 1
+    categorySlug: 'recommended-to-you',
+    totalCount: 100
+    books: [Book1, Book2, Book3]
+},
+{},
+{}
+]

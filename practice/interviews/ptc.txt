@@ -1,0 +1,23 @@
+round 1
+
+1) what's call stack
+2) what's variable in css and it's syntax how to set variable name dynamically
+3)js output based questions
+4) what are semantic tags and benefits
+5) accessibility
+6) difference between Promise and async await
+7) latest es6 features
+8) currying based questions
+9) implement custom map
+10) difference between http2 and http
+
+round 2
+
+javascript round,
+
+1) center square box(400px) to entire page
+2) create one more square(40px) to center of it's parent
+3) have button bottom of the page on each click clone the inside square
+4) on each click toggle background color yellow to green
+5) on each click toggle background color of n+1th place element 
+

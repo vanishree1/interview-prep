@@ -1,0 +1,27 @@
+let - block scope anything declared inside  {}
+const - block scope
+var - functional scope
+
+
+----
+function declaration, statement of definition
+function a() {
+    retturn 1;
+}
+
+function expression / right side function called anonymous function
+const a = function() {
+    retturn 2
+}
+
+first class function = where function can be stored as variable
+
+
+IIFE - immediate invoked function expression
+function a() {
+    retturn 2;
+}()
+
+params = function hi(x , y) {}
+
+arguments = hi('i', 'am good')

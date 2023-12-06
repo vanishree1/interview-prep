@@ -1,0 +1,5 @@
+1) timer which shows hours, minutes, seconds
+2) left center align div 
+
+round 2
+3) design debit card payment

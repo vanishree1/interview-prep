@@ -1,0 +1,83 @@
+Let a = ‘’,
+Const b = ‘abc’;
+Var c = ‘xyz’;
+D = ‘abbs’
+
+async somefn(){
+const d1 = await API1;
+const d2 = await API2;
+log(d1,d2)
+Let res = await promiseSettled([p1,p2])
+}
+type Return = {
+status: 'fulfilled' | 'rejected';
+value: any;
+reason: any;
+}
+
+promiseSettled(args) {
+Let res = [];
+ Return new Promise((resolve, reject) => {
+for(let i=0; i<args.length;i++) {
+	args[i].then(() => {
+	Res[i] = {status: ‘fullfilled’}
+})
+}
+	
+})
+}
+
+
+const sum = (a,b) => a+b;
+const curriedSum = curry(sum)
+curriedSum(1, 2) // 3
+curriedSum(1)(2) // 3
+
+Function myCurry(func) {
+	
+	Return function test(...arg) {
+		if(func.length === arg.length) {
+			Return func(...arg)
+} else {
+  Return function(...arg2) {
+	Return test(..arg, …arg2)	
+}
+}
+
+
+
+}
+  
+
+}
+
+Let instance;
+
+Class Car() {
+constructor() {
+	if(!instance) {
+	 instance = this
+}
+
+}
+}
+
+var output = (function(x) {
+delete x;
+return x;
+})(343);
+
+console.log(output);
+
+
+const shape = {
+radius: 10,
+diameter() {
+return this.radius * 2;
+},
+perimeter: () => 2 * Math.PI * this.radius,
+};
+
+
+shape.diameter()
+shape.perimeter()

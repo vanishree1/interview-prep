@@ -1,0 +1,137 @@
+round1 
+ karat interview:
+
+ 1) Design search input box, place search icon right side of it
+ 2) var and let based js output based questions
+ 3) what's xss security attack how to prevent it
+ 4) what's closure, currying, lexical scope
+ 5) build todo with infinite pagination using javascript(api , page size and skip is already given)
+
+ round 2
+ browser interview Round
+
+ build a tree of company name and it's tasks
+ show dots for children and arrow for company before it's name
+ it should toggle on click of children/company name
+ // Arrow characters to use: ▼ ▶ •
+
+const backendData = [
+    {
+      id: "1",
+      name: "Office Map"
+    },
+    {
+      id: "2",
+      name: "New Employee Onboarding",
+      children: [
+        {
+          id: "8",
+          name: "Onboarding Materials"
+        },
+        {
+          id: "9",
+          name: "Training"
+        }
+      ]
+    },
+    {
+      id: "3",
+      name: "Office Events",
+      children: [
+        {
+          id: "6",
+          name: "2018",
+          children: [
+            {
+              id: "10",
+              name: "Summer Picnic"
+            },
+            {
+              id: "11",
+              name: "Valentine's Day Party"
+            },
+            {
+              id: "12",
+              name: "New Year's Party"
+            }
+          ]
+        },
+        {
+          id: "7",
+          name: "2017",
+          children: [
+            {
+              id: "13",
+              name: "Company Anniversary Celebration"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      id: "4",
+      name: "Public Holidays"
+    },
+    {
+      id: "5",
+      name: "Vacations and Sick Leaves"
+    }
+  ];
+  
+  function fetchData() {
+    return new Promise(resolve => {
+      setTimeout(resolve, 100, backendData);
+    });
+  }
+  
+
+  export default fetchData;
+
+  round 3:
+  JS coding Round
+
+    make an api call for feature details and show components if feature is enabled. starts from there then discussion goes to scaling, caching.
+
+
+  function getFeatureDetails() {
+    return new Promise(resolve => {
+        const sampleFeatures = {
+        "extended-summary": true,
+        "feedback-dialog": false
+        };
+        setTimeout(resolve, 100, sampleFeatures);
+        });
+}
+
+export default getFeatureDetails;
+
+import getFeatureDetails from "./getFeatureDetails"
+
+let cache = {};
+
+function getFeatureState(feature) {
+    return new Promise((resolve, reject) => {
+        if(!cache[feature]) {
+            getFeatureDetails().then((response) => {
+                if(Object.keys(response).length >= 1) {
+                    resolve(response[feature])
+                    cache[feature] = response[feature];
+                }else {
+                    reject(new Error('error'))
+                }
+            }).catch((error) => {
+                reject(error);
+            })
+        } else {
+            console.log('returning from cache')
+            resolve(cache[feature])
+        }
+       
+    })
+}
+
+
+export default getFeatureState;
+
+
+

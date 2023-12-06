@@ -1,0 +1,6 @@
+1) what's their in latest reactjs version
+2) implement my bind
+3) o/p based
+one on promise
+another on closure
+when same name and function is their vairable takes higher priority

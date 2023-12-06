@@ -1,0 +1,55 @@
+round 1
+
+sum(1)(2)(3)(4)...n
+sum(1,2)(3,4)...n
+sum(1,2,3,4)...n
+
+should return sum of all params
+
+
+setTimeout(()=> {console.log('hello')}, 0)
+setTimeout(()=> {console.log('world')}, 10)
+
+print the output
+ans: world hello
+
+const n = 4
+for(var i=0; i< n; i++) {} console.log(i)
+for(let i=0; i< n; i++) {} console.log(i) 
+
+what's JS
+Explain Event loop
+difference between vue, angular, react
+what's reactQuery
+
+
+Round 2
+
+let arr = [1,2, 2, 3,3, 3,4,5,6,6,7]
+let arr = [1,2,3,4,5,6,7,2,3,3,4,6]
+
+move all unique element in the front and print unique index
+
+for(var i=0; i< n; i++) {} console.log(i)
+
+what are the points need to consider to improve app performance
+
+EventLoop
+
+react problem
+post
+[{id:1 title:'post1'}, {id:2, title:'post2' }] ... 100k
+comments
+[{id: 1: comment: 'hi'}, {id: 1: comment: 'hello'}, {id: 2: comment: 'hi'}] ... 100k
+
+how to render component 
+
+title with components
+
+Round 3
+
+How even though js is single threaded in news portal some animation of ads pops up and video plays at the same time.
+
+how to handle 100k plus data in browser, when we paginate if we dont keep in memory it takes more time to load else it crashes browser.
+
+how browsers work

@@ -1,0 +1,222 @@
+ // -------------------------------------------------------------
+// Q1. What is the output?
+// console.log(false == '0') // O/P - true
+// console.log(false === '0') // O/P - false
+
+
+
+// -------------------------------------------------------------
+// Q2. Output?
+// var x = 21;
+// var print = function() {
+//   console.log(x);
+//   var x = 20;
+// };
+// print();
+// O/P - undefined
+
+
+
+// -------------------------------------------------------------
+// Q3. What does the following code do ?
+// const foo = (x, y, z) => {
+//     return {
+//         x,
+//         y,
+//         z
+//     };
+// };
+
+// let result = foo("a", "b", "c"); 
+// console.log(result);
+
+// o/p. {"a" : "a", "b" : "b", "c" : "c"}
+
+
+// -------------------------------------------------------------
+// Q4. Read the value of property c  and store it in another variable
+// const a = { b: { c: 'Hi!' } };
+
+// const { b : y  } = a;
+
+// console.log("c val", y)
+
+
+
+// -------------------------------------------------------------
+// Q5: Solve below console queries.
+// var hero = {
+//   name: 'Clark Kent',
+//   getSecretIdentity: function (){
+//       return this.name; 
+//   }
+// };
+
+// // console.log(hero.getSecretIdentity()); // O/P - 'Clark Kent'
+// var stoleSecretIdentity = hero.getSecretIdentity.bind(hero); // O/P - return function
+// console.log(stoleSecretIdentity()); // O/P - undefined
+// console.log(stoleSecretIdentity.call(hero));
+// console.log(stoleSecretIdentity.apply(hero));
+
+
+
+// -------------------------------------------------------------
+// Q6:  Write a function to check if given strings are anagram.
+
+function isAnagram(string1, string2) {
+  // if(string1 && string2) {
+    if(!string1 || !string2) {
+      return false
+    }
+    if(string1.length !==  string2.length) {
+      return false;
+    }
+    let letterToCount = {};
+    for(let i=0; i< string1.length; i++) {
+      if(!letterToCount[string1[i]]) {
+        letterToCount[string1[i]] = 1;
+      } else {
+        letterToCount[string1[i]] = ++letterToCount[string1[i]];
+      }
+    }
+
+    for(let i=0; i< string2.length; i++) {
+      if(letterToCount[string2[i]]) {
+        letterToCount[string2[i]] = --letterToCount[string2[i]];
+      } else {
+        return false;
+      }
+    }
+
+    Object.keys(letterToCount).forEach((key) => {
+      if(letterToCount[key] !== 0) {
+        return false;
+      }
+    })
+
+    return true;
+  // }
+
+}
+
+
+
+
+console.log(isAnagram('tab', 'bat'))
+console.log(isAnagram('tomato', 'bat'))
+
+
+
+
+// ---------------------------------------------------------------
+// Q7: Write cd function which should return output like comments 
+
+function cd(pwd,input) {
+ if(!input) {
+  return pwd
+ }
+ let pwdArr = pwd.split('/'); 
+ let inputArr = input.split('/');
+
+ console.log('test ', pwdArr, inputArr)
+
+ for(let i=0; i < inputArr.length; i++) {
+    if(inputArr[i] == '..') {
+      pwdArr.pop();
+    } else {
+      pwdArr.push(inputArr[i])
+    }
+ }
+
+
+ return pwdArr.length < 1 ? '/' : pwdArr.join('/');
+}
+
+
+
+// // Enable below console logs to run code
+console.log(cd('/User/arista/code', 'js/src')); // /User/arista/code/js/src
+console.log(cd('/User/arista/code', '../documents')); // /User/arista/documents
+console.log(cd('/User/arista/code', '../../..')); // /
+console.log(cd('/User/arista/code', '../../other/../arista/backend')); // /User/arista/backend
+
+
+
+
+
+// ----------------------------------------------------------------
+// Q8:  Visit the current node and all the nested children of a given node.
+// let locations = {
+//       name: 'India',
+//       children: [{
+//         name: 'MH',
+//         children: [{
+//           name: 'Mumbai',
+//           children: []
+//         }, {
+//           name: 'Pune',
+//           children: []
+//         }, {
+//           name: 'Nagpur',
+//           children: []
+//         }]
+//       }, {
+//         name: 'MP',
+//         children: [{
+//           name: 'Indore',
+//           children: []
+//         }]
+//       }, {
+//         name: 'KT',
+//         children: [{
+//           name: 'Bangalore',
+//           children: []
+//         }]
+//       }]
+//     };
+
+// function visit (node) {
+//    console.log(node.name);
+// }
+
+// function(node, fun) {
+// } 
+
+function Child(props) {
+
+  return <button onClick={() => props.handleChange()} 
+}
+
+function Parent() {
+  const handleChnage = (params) => {
+    setState(param)
+  }
+  return(
+    <Child1 value={} />
+    <Child2 value={}  />
+  )
+}
+
+class PubSub {
+  constructor() {
+    this.mapSubCb = {}
+  }
+
+  publish(params) {
+    this.mapSubCb[params]()
+  }
+
+  subsubscriber(val , cab) {
+    this.mapSubCb[val] = cab
+  }
+}
+
+
+var pubSub = new PubSub();
+
+subScriber.subScriber('/test', () => {
+  copnsole.log()
+
+})
+
+publish("/test")

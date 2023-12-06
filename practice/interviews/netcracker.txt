@@ -1,0 +1,144 @@
+// Js
+
+// Import stylesheets
+import './style.css';
+
+//# 1
+// Task: calculate the number of identical elements
+// You need to output the number of repetitions of elements for each element to the console.
+// Example: "value - quantity in the object"
+// for this object - { a: 3, b:  1, c: 2, d: 1 }
+const obj1 = {
+  1: 'a',
+  2: 'b',
+  3: 'a',
+  4: 'c',
+  5: 'a',
+  6: 'd',
+  7: 'c',
+};
+
+function findIdenticalElements(obj) {
+  let identicalCharCount = {};
+
+  Object.keys(obj).forEach((ele) => {
+    const key = obj[ele];
+    if (!identicalCharCount[key]) {
+      identicalCharCount[key] = 0;
+    }
+    identicalCharCount[key] = ++identicalCharCount[key];
+  });
+
+  return identicalCharCount;
+}
+
+console.log('test result', findIdenticalElements(obj1));
+//# 2
+// Increment elements that are larger than the previous one in the original array
+const ar = [4, 5, 6, 7, 8, 9, 2, 0, 3, 0];
+// [4, 6, 7, 8, 9, 10, 2, 0, 4, 0]
+
+function incrementEle(arr) {
+  if(arr.length <= 0) {
+    return []
+  }
+  let result = [arr[0]];
+  for(let i=1; i< arr.length; i++) {
+    let previousEle = arr[i-1];
+    let currentEle = arr[i];
+    if(currentEle > previousEle) {
+      result.push(++currentEle)
+    }else {
+      result.push(currentEle)
+    }
+  }
+
+  return result;
+}
+
+console.log('check result', incrementEle(ar))
+
+//# 3
+// What will be output to the console?
+let obj = {'a': 5};
+
+let f = (o) => {
+  o.a = '3'
+};
+
+f(obj);
+console.log(obj.a);
+
+//# 4
+const object = {
+  name: "John",
+  hi() {
+    console.log(`Hello, ${this.name}!`);
+  }
+};
+
+(() => {
+  object.hi()
+})()
+setTimeout(object.hi, 1000);
+
+
+//reactjs
+Write a functional component that accepts two props — an array of tasks and a function to update the array. Each element in the array is an object with two fields: “task” and “subtasks”. The “task” field is associated with a string description and the “subtasks” field is associated with an array of string descriptions.
+
+Your component should render a vertical list of the tasks along with the subtasks in an indented list below their associated task.
+
+The user should be able to toggle any subtask as completed/uncompleted by clicking on its text.(Tasks do not need to be clickable.) A completed subtask should appear as struck text.
+
+When all subtasks for a particular task are completed, the task should also appear struck through.
+
+Finally, include a button that removes all completed tasks and their associated subtasks when pressed (it should not remove completed subtasks associated with uncompleted tasks).
+
+The picture Image1.png shows the completed component after a user has clicked a few subtasks.
+
+If the user were to click “Clear completed tasks” on the image above, only the “Study” task and its associated subtasks would be removed. Refer 
+Image2.png
+
+
+
+
+Base component
+import { useState } from "react";
+import TasksAndSubtasks from "./TasksAndSubtasks";
+
+import "./styles.css";
+
+const TASKS = [
+  {
+    task: "Study",
+    subtasks: [
+      { name: "Interview Preparation", completed: false },
+      { name: "Screening Test", completed: false },
+      { name: "React coding challenge", completed: false }
+    ]
+  },
+  {
+    task: "Project",
+    subtasks: [
+      { name: "Design", completed: false },
+      { name: "Develop", completed: false },
+      { name: "Deploy", completed: false }
+    ]
+  }
+];
+
+export default function App() {
+  const [tasks, setTasks] = useState(TASKS);
+
+  return (
+    <div
+      style={{
+        display: "flex",
+        justifyContent: "center",
+        marginTop: 30
+      }}
+    >
+      <TasksAndSubtasks taskArray={tasks} setTaskArray={setTasks} />
+    </div>
+  );
+}

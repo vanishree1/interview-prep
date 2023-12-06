@@ -1,0 +1,15 @@
+Round 1 - Hiring Mangaer round
+Explain about project, challenges and how did you overcome
+**Palindrome**
+ 
+ A string is a palindrome if it is read the same from forward or backward.
+ 
+ For example, 'dad' reads the same either from forward or backward, so the word 'dad' is a palindrome.
+ 
+ Similarly, 'madam' is also a palindrome, as is 'noon'.
+ 
+ _In your preferred language (either JS or Python), write a function to:_
+ 
+ - Part I - Check if a string is a palindrome using a For Loop
+ - Part II - Check if a string is a palindrome without iteration, using only built in (e.g. Array, String) functions.
+ 

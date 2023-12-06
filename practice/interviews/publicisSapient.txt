@@ -1,0 +1,8 @@
+write typescript code for the below game -
+
+1) there is n pair of buttons with states and it's capital in random order
+when user clicks on pair it should disappear, else it should stay on screen
+
+2) explain about security threat , accessibility in depth
+
+3) difference between http, http2, http3.

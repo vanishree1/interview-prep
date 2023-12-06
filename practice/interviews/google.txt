@@ -1,0 +1,13 @@
+find median
+
+1) insert number to array
+
+2) find median in it
+
+3) if it's not having power of 2 then generate 2(k -1) < m > 2(k+1)
+
+example:
+
+array - [3]
+insert - 4, 5 => [3, 4, 5]
+median - 4 =>  2 < 4 > 8=> 2,3,4,5,6,7,8
